@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="description" content="Meridian Hotel">
+	<!-- Latest compiled and minified CSS -->
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+<body>
+{%if name!='Unknown'%}
+
+
+    <div class=class="container" style="width:60%;padding:30px;">
+        <div><h2> Welcome {{name}}</h2>
+    <h3>You  have been face-recognized!</h3>
+        <h3>Successfully Logged in.</h3>
+    <a href="/" class="btn btn-success navbar-btn navbar">Proceed</a>
+    </div>
+
+    </div>
+
+
+{% else %}
+    <div class="container" style="width:60%;padding:30px;">
+    <h2>Oops!You haven't registered.</h2>
+    <h3>You need to register yourself first.</h3>
+        	<a href="/guest_name" class="btn btn-warning navbar-btn navbar">Register</a>
+      </div>
+{% endif %}
+
+</body>
+</html>

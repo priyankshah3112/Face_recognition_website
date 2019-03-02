@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="description" content="Meridian Hotel">
+	<!-- Latest compiled and minified CSS -->
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+<body>
+
+    <div class=class="container" style="width:60%;padding:30px;">
+        <h2> Welcome {{name}}</h2>
+    <h3>Thanks for registration. Not only the staff ,but even our server knows you now!</h3>
+          <img src="{{ url_for('sent',filename='photo/0.jpg') }}"/>
+
+
+
+    </div>
+        <hr>
+ <a href="/" class="btn btn-success">Proceed</a>
+
+
+</body>
+</html>

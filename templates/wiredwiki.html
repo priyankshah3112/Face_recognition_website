@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Meridian Hotel </title>
+	<meta name="description" content="Meridian Hotel">
+	<!-- Latest compiled and minified CSS -->
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+
+	<style>
+	body{
+		padding-top: 40px;
+	}
+
+	</style>
+
+<body data-spy="scroll" data-target="#my-navbar">
+
+  <!-- Navbar -->
+  	<nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+  		<div class="container">
+  			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  				</button>
+
+  				<a href="/" class="navbar-brand">Meridian</a>
+  			</div><!-- Navbar Header-->
+  			<div class="collapse navbar-collapse" id="navbar-collapse">
+
+				{%if session['logged_in']%}
+					<a href="/logOut" class="btn btn-warning navbar-btn navbar-right"style="margin-left:20px;">LogOut</a>
+
+
+				{%else%}
+					<a href="/guest_name" class="btn btn-warning navbar-btn navbar-right"style="margin-left:20px;">Register</a>
+
+					<a href="/login" class="btn btn-warning navbar-btn navbar-right"style="margin-left:20px;">Login</a>
+
+				{%endif%}
+  				<ul class="nav navbar-nav">
+  					<li><a href="#rooms">Rooms</a>
+  					<li><a href="#restaurant_bar">Restaurant-Bar</a>
+  					<li><a href="#services">Services</a>
+  					<li><a target="_blank" href="/hotelreview">Review</a>
+  					<li><a href="#contact">ContactUs</a>
+  				</ul>
+  			</div>
+  		</div><!-- End Container-->
+  	</nav><!-- End navbar -->
+
+  	<!-- jumbotron-->
+
+  	<div class="jumbotron">
+  		<div class="container text-center">
+  			<h1>Meridian Hotel</h1>
+			<h2>{{condition}}</h2>
+  			<p>We serve love,not hospiatality. </p>
+  		</div><!-- End container -->
+  	</div><!-- End jumbotron-->
+
+  	<!-- Rooms-->
+  	<div class="container">
+			<section>
+				<div class="page-header" id="rooms">
+	  				<h2>Rooms.<small> Find your space,in our space.</small></h2>
+					{%if session['logged_in']%}
+						<h2>logged in<small> Find your space,in our space.</small></h2>
+
+
+					{%else%}
+						<h2>NOT LOGGED IN<small> Find your space,in our space.</small></h2>
+
+					{%endif%}
+	  			</div>
+
+	  			<div class="carousel slide" id="screenshot-carousel" data-ride="carousel">
+	  				<ol class="carousel-indicators">
+	  					<li data-target="#screenshot-carousel" data-slide-to="0" class="active"></li>
+	  					<li data-target="#screenshot-carousel" data-slide-to="1"></li>
+	  					<li data-target="#screenshot-carousel" data-slide-to="2"></li>
+	  					<li data-target="#screenshot-carousel" data-slide-to="3"></li>
+	  				</ol>
+	  				<div class="carousel-inner">
+	  					<div class="item active">
+	  						<img src="{{ url_for('static', filename = 'room4.jpg') }}" alt="Text of the image">
+	  						<div class="carousel-caption">
+	  							<h3>Cozy Corner</h3>
+	  							<p>Pamper your lazy self.</p>
+	  						</div>
+	  					</div>
+	  					<div class="item">
+	  						<img src="{{ url_for('static', filename = 'room1.jpg') }}" alt="Text of the image">
+	  						<div class="carousel-caption">
+	  							<h3>Mothter Nature</h3>
+	  							<p>Connect to the green side.</p>
+	  						</div>
+	  					</div>
+	  					<div class="item">
+	  						<img src="{{ url_for('static', filename = 'room2.jpg') }}" alt="Text of the image">
+	  						<div class="carousel-caption">
+	  							<h3>Let's Holiday!</h3>
+	  							<p>Unleash the vacation mode.</p>
+	  						</div>
+	  					</div>
+	  					<div class="item">
+	  						<img src="{{ url_for('static', filename = 'room3.jpg') }}" alt="Text of the image">
+	  						<div class="carousel-caption">
+	  							<h3>Dream View</h3>
+	  							<p>Get breath-taking views.</p>
+	  						</div>
+	  					</div>
+
+	  				</div><!-- End Carousel inner -->
+	  				<a href="#screenshot-carousel" class="left carousel-control" data-slide="prev">
+	  					<span class="glyphicon glyphicon-chevron-left"></span>
+	  				</a>
+	  				<a href="#screenshot-carousel" class="right carousel-control" data-slide="next">
+	  					<span class="glyphicon glyphicon-chevron-right"></span>
+	  				</a>
+	  			</div><!-- End Carousel -->
+          <div class="page-header" id="types">
+      				<h2>Suites.</h2>
+      			</div><!-- End Page Header -->
+
+      			<div class="row">
+      				<div class="col-sm-8">
+      					<h3>Classic Suite</h3>
+      					<p>
+All suites of this type consist of two different venues: a leisure or working part and a full of light bedroom. Suites situated on the lower part of the hotel’s building are decorated with original 19th c. ornamental details of refined pilasters’ capitals and stuccoed ceilings. Also in this part of the hotel there is an extraordinarily attractive venue located in the Neo-baroque dome.
+
+In the main part of the hotel’s building a characteristic feature of these type of suites is, among others, the wall made all with glass with a thought provoking view on the Gothic church of St. Dorothy. Here, contemporary design of diagonal saddle bars effortlessly combine the narrative references to the old architecture. All appointed bathrooms are made with different kind of marble.
+
+Please, visit our Photo Gallery to see more pictures from our offer.
+</p>
+							</div>
+      				<div class="col-sm-4">
+      					<img src="{{ url_for('static', filename = 'suite1.jpg') }}" class="img-responsive" alt="image">
+      				</div>
+      			</div><!-- End row -->
+						<hr>
+      			<div class="row">
+      				<div class="col-sm-8">
+      					<h3>Royal Suite</h3>
+      					<p>Palatial in every sense, the 780 square metre Royal Suite has been impeccably designed with an opulent colour scheme, sumptuous furnishings and exclusive amenities including a private lift and cinema. Both floors of this exquisite Suite feature sensational natural light and sublime uninterrupted views over the Arabian Gulf.
+										Exquisite majlis style lounge, library and cinema room. Personal in suite elevator. Private dining room for 12.Two large dressing rooms. The world’s largest brigade of butlers, available 24 hours. In-suite check-in and check-out. Upstairs and downstairs personalized private bars. Daily breakfast buffet for four in Junsui or Bab Al Yam or alternatively  in the privacy of your suite. Separate staff entrance with private butler’s kitchen.
+
+								</p>
+      				</div>
+      				<div class="col-sm-4">
+      					<img src="{{ url_for('static', filename = 'suite2.jpg') }}" class="img-responsive" alt="image">
+      				</div>
+      			</div>
+           	<hr>
+      			<div class="row">
+      				<div class="col-sm-8">
+
+      					<h3>Delux Suite</h3>
+      					<p>Our Deluxe Rooms have all the amenities to make for a glamorous Las Vegas stay. Triple-sheeted, 300-thread-count bedding. A goodnight button to power down your room with the touch of your finger. Custom beds from Sealy®. These are just a few of the details we’ve perfected in our 520-square-foot sanctuaries. And it’s earned us top ratings from both AAA and Forbes Travel Guide. </p>
+      				</div>
+      				<div class="col-sm-4">
+      					<img src="{{ url_for('static', filename = 'suite3.jpg') }}" class="img-responsive" alt="image">
+      				</div>
+      			</div>
+			</section>
+  	</div><!--EndROOM ENDS Container-->
+
+<hr>
+<!--Restaurant & Bar -->
+	<div class="container">
+		<section>
+			<div class="page-header" id="restaurant_bar">
+  				<h2>Restaurant-Bar.<small> Check out the food we serve!</small></h2>
+  			</div>
+		</section>
+	</div>
+  			<div class="carousel slide" id="screenshot-carousel" data-ride="carousel" style="width:100%;">
+
+  			<div class="carousel-inner">
+  					<div class="item active">
+  						<img src="{{ url_for('static', filename = 'food2.jpg') }}" alt="Text of the image" style="width:100%;">
+
+  					</div>
+  					<div class="item">
+  						<img src="{{ url_for('static', filename = 'food6.jpg') }}" alt="Text of the image" style="width:100%;">
+
+  					</div>
+  					<div class="item">
+  						<img src="{{ url_for('static', filename = 'food5.jpg') }}" alt="Text of the image" style="width:100%;">
+
+  					</div>
+  					<div class="item">
+  						<img src="{{ url_for('static', filename = 'food7.jpg') }}" alt="Text of the image" style="width:100%;">
+
+  					</div>
+
+  				</div><!-- End Carousel inner -->
+  				<a href="#screenshot-carousel" class="left carousel-control" data-slide="prev">
+  					<span class="glyphicon glyphicon-chevron-left"></span>
+  				</a>
+  				<a href="#screenshot-carousel" class="right carousel-control" data-slide="next">
+  					<span class="glyphicon glyphicon-chevron-right"></span>
+  				</a>
+
+  			</div><!-- End Carousel -->
+				<div class="container">
+				</section>
+							<div class="container" style="width:80%;margin-top:-200px;top:50%; background-color: blue; z-index:5000;height:50%;">
+					<div class="row"  style=" height:600px">
+						<div class="col-md-12" style="background-color:white; height:100%">
+						<p>8001 represents the local postal code and a modern Swiss and urban lifestyle. You can find us in Kreis 1 in the heart of Zurich.
+
+Breakfast to your heart’s content.  Fast, healthy and diverse lunches. Spend the afternoon with coffee and cakes, reading, studying, chatting or just simply be.  Enjoy the evening with our Swiss Tapas or stay for a relaxed dinner.  All of this can be found in the Restaurant 8001!
+
+Our kitchen offers uncomplicated and modern interpretations of Swiss dishes made with fresh, regional products. Our cellar hosts an array of Swiss wines and spirits along with clever cocktails. Let yourself be surprised!
+
+Opening Hours</p>
+						</div>
+
+					</div>
+				</div>
+</div>
+</div>
+
+  			<hr>
+				<!-- Rooms-->
+				<div class="container">
+					<section>
+						<div class="page-header" id="services">
+								<h2>Services.<small> 24x7 at your disposal.</small></h2>
+							</div>
+
+							<div class="carousel slide" id="screenshot-carousel" data-ride="carousel">
+								<ol class="carousel-indicators">
+									<li data-target="#screenshot-carousel" data-slide-to="0" class="active"></li>
+									<li data-target="#screenshot-carousel" data-slide-to="1"></li>
+									<li data-target="#screenshot-carousel" data-slide-to="2"></li>
+									<li data-target="#screenshot-carousel" data-slide-to="3"></li>
+								</ol>
+								<div class="carousel-inner">
+									<div class="item active">
+										<img src="{{ url_for('static', filename = 'services2.jpg') }}" alt="Text of the image">
+										<div class="carousel-caption">
+											<h3>Pampering</h3>
+											<p>State of the art room service</p>
+										</div>
+									</div>
+									<div class="item">
+										<img src="{{ url_for('static', filename = 'services4.jpg') }}" alt="Text of the image">
+										<div class="carousel-caption">
+											<h3>Gym Zone</h3>
+											<p>Just do it!</p>
+										</div>
+									</div>
+									<div class="item">
+										<img src="{{ url_for('static', filename = 'services5.jpg') }}" alt="Text of the image">
+										<div class="carousel-caption">
+											<h3>Swimming Pool</h3>
+											<p>Live to Dive!.</p>
+										</div>
+									</div>
+									<div class="item">
+										<img src="{{ url_for('static', filename = 'services1.jpg') }}"alt="Text of the image">
+										<div class="carousel-caption">
+											<h3>Valet Parking</h3>
+											<p>Excellent Parking Facilities.</p>
+										</div>
+									</div>
+
+								</div><!-- End Carousel inner -->
+								<a href="#screenshot-carousel" class="left carousel-control" data-slide="prev">
+									<span class="glyphicon glyphicon-chevron-left"></span>
+								</a>
+								<a href="#screenshot-carousel" class="right carousel-control" data-slide="next">
+									<span class="glyphicon glyphicon-chevron-right"></span>
+								</a>
+							</div><!-- End Carousel -->
+							<div class="page-header" id="types">
+									<h2>Services</h2>
+								</div><!-- End Page Header -->
+
+								<div class="row">
+									<div class="col-sm-6">
+										<h3>Breakfast</h3>
+										<p>
+											Our extensive breakfast buffet with fresh, local produce is available Monday to Friday 6:30 to 10:00 and on weekends until 12:00 pm. If breakfast is not included in your rate, you can at any time for the price of CHF 20, -
+								be put on your account.
+				</p>
+									</div>
+
+								</div><!-- End row -->
+								<hr>
+								<div class="row">
+									<div class="col-sm-6">
+										<h3>Concierge</h3>
+										<p>
+											This is new! All 81 rooms are equipped with a tablet PC, the concierge @ leoneck. So can
+	you at any time using the free wireless Internet, read your favorite newspaper, plan your day,
+	look restaurant recommendations and then to find the right location for your special occasion -
+	and all throughout the hotel. You can take him for breakfast, easily surf in the lobby,
+	or simply browse in their room on the Internet.
+				</p>
+									</div>
+
+								</div><!-- End row -->
+								<hr>
+								<div class="row">
+									<div class="col-sm-6">
+										<h3>Information Service</h3>
+										<p>
+											We can assist you with advice, assistance and tickets with any questions regarding culture and sightseeing, public
+	transport and car rental in and around Zurich. Contact us!
+				</p>
+									</div>
+
+								</div><!-- End row -->
+
+								<hr>
+								<div class="row">
+									<div class="col-sm-6">
+										<h3>Swimming Facilities</h3>
+										<p>
+											Whether you are swimming for leisure, fitness or entertaining the kids, our extensive pool facilities will meet and exceed all of your expectations.
+
+Check out our opening times to plan your next visit.
+
+We have a great team of Lifeguards on hand to make sure your visit is as enjoyable and safe as possible.
+
+If you'd like to learn to swim, or want to improve your strokes, take a look at our Adult Swimming Lessons. Leisureland Swim School is ideal for the little people, teaching children from 4-12 years how to swim and gain love and respect for the water. With qualified swimming teachers and lifeguards on hand at all times, your children are in safe hands. Click here to check out more information on our Swimming lessons for Adults and Children.
+										</p>
+									</div>
+
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-sm-8">
+
+										<h3>Business Corner</h3>
+										<p>Our Business Corner is available in the lobby with a printer and photocopier available free of charge.
+Free Wi-Fi is available in all rooms and throughout the house for a matter of course.When you’re planning a meeting, you want options. Little Rock provides a wide selection of business meeting facilities, whether you’re seeking a simple meeting room, venues for larger groups or something unique.
+
+We’ll set you up with the ideal business meeting facilities for your needs. Sites range from colossal performance halls and convention centers to smaller, more intimate meeting room venues. Everything is centrally located near parks, attractions and hotels as well as the finest restaurants and bars in the state. Browse your options below and book your next big meeting in Little Rock! </p>
+									</div>
+
+								</div>
+					</section>
+				</div><!--EndROOM ENDS Container-->
+				<hr>
+  			<div class="row">
+  				<div class="col-sm-4">
+  					<div class="panel panel-default text-center">
+  						<div class="panel-body">
+  							<span class="glyphicon glyphicon-ok"></span>
+  							<h4>This is the Heading</h4>
+  							<p>Nam velit est, tempor vel posuere et, auctor a lectus. Aenean gravida, est accumsan dictum rhoncus, lectus mi suscipit lacus, suscipit accumsan augue tellus vitae dolor. Morbi in euismod dui</p>
+  						</div>
+  					</div>
+  				</div>
+
+  				<div class="col-sm-4">
+  					<div class="panel panel-default text-center">
+  						<div class="panel-body">
+  							<span class="glyphicon glyphicon-star"></span>
+  							<h4>This is the Heading</h4>
+  							<p>Nam velit est, tempor vel posuere et, auctor a lectus. Aenean gravida, est accumsan dictum rhoncus, lectus mi suscipit lacus, suscipit accumsan augue tellus vitae dolor. Morbi in euismod dui</p>
+  						</div>
+  					</div>
+  				</div>
+
+  				<div class="col-sm-4">
+  					<div class="panel panel-default text-center">
+  						<div class="panel-body">
+  							<span class="glyphicon glyphicon-play-circle"></span>
+  							<h4>This is the Heading</h4>
+  							<p>Nam velit est, tempor vel posuere et, auctor a lectus. Aenean gravida, est accumsan dictum rhoncus, lectus mi suscipit lacus, suscipit accumsan augue tellus vitae dolor. Morbi in euismod dui</p>
+  						</div>
+  					</div>
+  				</div>
+  			</div><!-- end row -->
+
+		</section>
+	</div><!-- End Container -->
+
+<!-- Faq -->
+
+    <div class="container">
+      <section>
+        <div class="page-header" id="faq">
+          <h2>FAQ.<small> Engaging with consumers.</small></h2>
+        </div><!-- End Page Header -->
+
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <a href="#collapse-1" data-toggle="collapse" data-parent="#accordion">
+                  Question one?
+                </a>
+              </div><!-- End panel title -->
+              <div id="collapse-1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas non urna in fringilla. Praesent consequat est at feugiat faucibus
+                </div>
+              </div><!-- End Panel collapse -->
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <a href="#collapse-2" data-toggle="collapse" data-parent="#accordion">
+                  Question Two?
+                </a>
+              </div><!-- End panel title -->
+              <div id="collapse-2" class="panel-collapse collapse">
+                <div class="panel-body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas non urna in fringilla. Praesent consequat est at feugiat faucibus
+                </div>
+              </div><!-- End Panel collapse -->
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <a href="#collapse-3" data-toggle="collapse" data-parent="#accordion">
+                  Question Three?
+                </a>
+              </div><!-- End panel title -->
+              <div id="collapse-3" class="panel-collapse collapse">
+                <div class="panel-body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas non urna in fringilla. Praesent consequat est at feugiat faucibus
+                </div>
+              </div><!-- End Panel collapse -->
+            </div>
+          </div>
+        </div><!-- End panel group -->
+
+      </section>
+    </div><!-- End container -->
+
+
+<!-- Contact -->
+
+  <div class="container">
+    <section>
+      <div class="page-header" id="contact">
+          <h2>Contact Us.<small> Contact us for more.</small></h2>
+        </div><!-- End Page Header -->
+
+        <div class="row">
+          <div class="col-lg-4">
+            <p>Send us a message, or contact us from the address below</p>
+
+
+            <address>
+              <strong>Wiredwiki Pvt Ltd.</strong></br>
+              111, Malviya nagar </br>
+              Plot no. 45</br>
+              New delhi - 110017</br>
+              P: +91 9999999999
+            </address>
+          </div>
+
+          <div class="col-lg-8">
+            <form action="" class="form-horizontal">
+              <div class="form-group">
+                <label for="user-name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="user-name" placeholder="Enter you name">
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <label for="user-email" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="user-email" placeholder="Enter you Email Address">
+                </div>
+              </div><!-- End form group -->
+
+
+              <div class="form-group">
+                <label for="user-message" class="col-lg-2 control-label">Any Message</label>
+                <div class="col-lg-10">
+                  <textarea name="user-message" id="user-message" class="form-control"
+                  cols="20" rows="10" placeholder="Enter your Message"></textarea>
+                </div>
+              </div><!-- End form group -->
+
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+
+
+
+            </form>
+          </div>
+        </div><!-- End the row -->
+
+    </section>
+  </div>
+
+<!-- Footer -->
+
+    <footer>
+      <hr>
+        <div class="container text-center">
+        <h3>Subscribe for more free stuff</h3>
+        <p>Enter your name and email</p>
+
+        <form action="" class="form-inline">
+          <div class="form-group">
+            <label for="subscription">Subscribe</label>
+            <input type="text" class="form-control" id="subscription" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="text" class="form-control" id="email" placeholder="Enter your Email">
+          </div>
+          <button type="submit" class="btn btn-default">Subscribe</button>
+
+        </form>
+
+        <hr>
+        <ul class="list-inline">
+          <li><a href="http://www.twitter.com/wiredwiki">Twitter</a></li>
+          <li><a href="http://www.facebook.com/askorama">Facebook</a></li>
+          <li><a href="http://www.youtube.com/wiredwiki">YouTube</a></li>
+        </ul>
+
+        <p>&copy; Copyright @ 2014</p>
+
+      </div><!-- end Container-->
+
+
+    </footer>
+
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

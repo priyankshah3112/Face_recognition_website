@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Register</title>
+      <meta charset="utf-8">
+	<title>Meridian Hotel </title>
+	<meta name="description" content="Meridian Hotel">
+	<!-- Latest compiled and minified CSS -->
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  </head>
+
+	<style>
+	body{
+		padding-top: 20px;
+		background-image:{{url_for('static', filename = 'backgorund_register.jpg')}}
+	}
+
+	</style>
+
+<body data-spy="scroll" data-target="#my-navbar">
+
+  <!-- Navbar -->
+  	<nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+  		<div class="container">
+  			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  					<span class="icon-bar"></span>
+  				</button>
+
+  				<a href="/" class="navbar-brand">Meridian</a>
+  			</div><!-- Navbar Header-->
+  			<div class="collapse navbar-collapse" id="navbar-collapse">
+
+
+
+
+  				<ul class="nav navbar-nav">
+  					<li><a href="#rooms">Rooms</a>
+  					<li><a href="#restaurant_bar">Restaurant-Bar</a>
+  					<li><a href="#services">Services</a>
+  					<li><a target="_blank" href="/hotelreview">Review</a>
+  					<li><a href="#contact">ContactUs</a>
+  				</ul>
+  			</div>
+  		</div><!-- End Container-->
+  	</nav><!-- End navbar -->
+
+  	<!-- jumbotron-->
+
+  	<div class="jumbotron" style="height=400px;">
+  		<div class="container text-center">
+  			<h1>Meridian Hotel</h1>
+  			<p>We serve love,not hospiatality. </p>
+  		</div><!-- End container -->
+  	</div><!-- End jumbotron-->
+
+
+  <div class="container"style="background-color:white;height:350px;padding:20px;widht:50%;width:400px;padding:30px;">
+    <div class="heading">
+        <h4 class="form-heading">Hello Guest.Time to Register.</h4>
+        </div>
+      {% from "_formhelpers.html" import render_field %}
+    <form  action="/register_face" method=post>
+      <dl>
+        {{ render_field(form.name_guest)}}
+          {{render_field(form.email)}}
+      </dl>
+      <div>
+          <input type=submit value='Register' name='submit_btn'>
+      </div>
+</form>
+
+
+
+
+    </div>
+
+
+
+
+  </body>
+</html>
